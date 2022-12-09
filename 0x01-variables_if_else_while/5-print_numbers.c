@@ -11,5 +11,6 @@ int main(void)
 	{
 		putchar(num);
 	}
+	putchar(10);
 	return (0);
 }
