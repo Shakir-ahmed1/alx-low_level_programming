@@ -5,7 +5,8 @@
  */
 int main(void)
 {
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n";
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP\
+		QRSTUVWXYZ\n";
 	int count;
 
 	for (count = 0; count <= 42; count++)
