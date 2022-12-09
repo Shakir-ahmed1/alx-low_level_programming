@@ -5,11 +5,10 @@
  */
 int main(void)
 {
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP"
-		"QRSTUVWXYZ\n";
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n";
 	int count;
 
-	for (count = 0; count <= 42; count++)
+	for (count = 0; count <= 52; count++)
 	{
 		putchar(alphabet[count]);
 	}
