@@ -2,7 +2,7 @@
 /**
  * main - prints all combinations of two two-digit numbers
  *
- * Return: 
+ * Return: 0 , successfull
  */
 int main(void)
 {
@@ -18,16 +18,16 @@ int main(void)
 				{
 					if (num1 + num2 < num3 + num4)
 					{
-						putchar(num1);
-						putchar(num2);
-						putchar(' ');
-						putchar(num3);
-						putchar(num4);
-						if (!(num1 + num2 == 56 + 57 && num3 + num4 == 57 + 57))
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					putchar(num1);
+					putchar(num2);
+					putchar(' ');
+					putchar(num3);
+					putchar(num4);
+					if (!(num1 + num2 == 56 + 57 && num3 + num4 == 57 + 57))
+					{
+					putchar(',');
+					putchar(' ');
+					}
 					}
 				}
 			}
