@@ -23,7 +23,7 @@ int main(void)
 					putchar(' ');
 					putchar(num3);
 					putchar(num4);
-					if (!(num1 + num2 == 56 + 57 && num3 + num4 == 57 + 57))
+					if (!(num1 == 57 && num2 == 56 && num3 + num4 == 57 + 57))
 					{
 					putchar(',');
 					putchar(' ');
