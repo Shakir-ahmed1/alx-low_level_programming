@@ -4,14 +4,13 @@
  */
 void times_table(void)
 {
-	int i, j, k, len;
+	int i, j, k;
 
 	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j <= 9; j++)
 		{
 			k = i * j;
-			len = sizeof(k) / 4;
 			if (k < 10)
 			{
 				_putchar('0' + k);
