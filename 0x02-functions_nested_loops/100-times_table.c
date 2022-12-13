@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * times_table - it prints the time tables available up to nine
+ * print_times_table - it prints the time tables available up to nine
+ * @n: max length
  */
-void times_table(int n)
+void print_times_table(int n)
 {
 	int i, j, k;
 
