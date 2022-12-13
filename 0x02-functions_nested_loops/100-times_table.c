@@ -1,4 +1,5 @@
 #include "main.h"
+void number_printer(int);
 /**
  * print_times_table - it prints the time tables available up to nine
  * @n: max length
@@ -13,6 +14,7 @@ void print_times_table(int n)
 	{
 		for (j = 0; j <= n; j++)
 		{
+			number_printer(i * j);
 			/*if (i * j < 10)
 			{
 				_putchar('0' + i * j);
@@ -64,7 +66,7 @@ void number_printer(int num)
 		_putchar('0' + (num) / 10);
 		_putchar('0' + (num) % 10);
 	}
-	else if (i * j < 1000)
+	else if (num < 1000)
 	{
 		_putchar('0' + (num) / 100);
 		_putchar('0' + ((num) / 10) % 10);
