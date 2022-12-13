@@ -9,7 +9,7 @@ int main(void)
 	char word[] = "_putchar";
 	int i;
 
-	for (i = 0; i < (int) sizeof(word) + 1; i++)
+	for (i = 0; i < (int) sizeof(word) - 1; i++)
 	{
 		putchar(word[i]);
 	}
