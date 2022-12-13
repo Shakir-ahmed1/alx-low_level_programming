@@ -10,7 +10,7 @@ void times_table(void)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			k = i * j
+			k = i * j;
 			len = sizeof(k) / 4;
 			if (len == 1)
 			{
