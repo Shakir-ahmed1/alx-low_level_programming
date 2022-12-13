@@ -13,7 +13,7 @@ void print_times_table(int n)
 	{
 		for (j = 0; j <= n; j++)
 		{
-			if (i * j < 10)
+			/*if (i * j < 10)
 			{
 				_putchar('0' + i * j);
 			}
@@ -27,7 +27,7 @@ void print_times_table(int n)
 				_putchar('0' + (i * j) / 100);
 				_putchar('0' + ((i * j) / 10) % 10);
 				_putchar('0' + (i * j) % 10);
-			}
+			} */
 			if (j != n)
 			{
 				_putchar(',');
@@ -47,5 +47,27 @@ void print_times_table(int n)
 				_putchar('\n');
 			}
 		}
+	}
+}
+/**
+ * number_printer - print the numbers
+ * @num - the number to be printed
+ */
+void number_printer(int num)
+{
+	if (num < 10)
+	{
+		_putchar('0' + num);
+	}
+	else if (num < 100)
+	{
+		_putchar('0' + (num) / 10);
+		_putchar('0' + (num) % 10);
+	}
+	else if (i * j < 1000)
+	{
+		_putchar('0' + (num) / 100);
+		_putchar('0' + ((num) / 10) % 10);
+		_putchar('0' + (num) % 10);
 	}
 }
