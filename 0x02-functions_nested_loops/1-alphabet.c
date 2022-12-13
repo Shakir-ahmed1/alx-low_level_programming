@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 void print_alphabet(void);
 /**
  * print_alphabet - prints alphabets in small letter
@@ -11,7 +10,6 @@ void print_alphabet(void)
 		putchar(97 + i);
 	}
 	putchar('\n');
-	return;
 }
 /**
  * main - alphabet printer
