@@ -7,9 +7,13 @@
 int print_last_digit(int n)
 {
 	int i;
-	
+
 	n = (int) n;
-	if (n < 0)
+	if (n == INT_MIN)
+	{
+		n = 8;
+	}
+	else if (n < 0)
 	{
 		n = -n;
 	}
