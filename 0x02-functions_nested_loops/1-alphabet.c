@@ -11,6 +11,7 @@ void print_alphabet(void)
 		putchar(97 + i);
 	}
 	putchar('\n');
+	return;
 }
 /**
  * main - alphabet printer
