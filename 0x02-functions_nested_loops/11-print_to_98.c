@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include "main.h"
 /**
  * print_to_98 - it prints numbers between the given number and 98
