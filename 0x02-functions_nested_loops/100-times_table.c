@@ -22,7 +22,7 @@ void print_times_table(int n)
 				_putchar('0' + (i * j) / 10);
 				_putchar('0' + (i * j) % 10);
 			}
-			else if (k <1000)
+			else if (k < 1000)
 			{
 				_putchar('0' + (i * j) / 100);
 				_putchar('0' + ((i * j) / 10) % 10);
@@ -49,4 +49,3 @@ void print_times_table(int n)
 		}
 	}
 }
-
