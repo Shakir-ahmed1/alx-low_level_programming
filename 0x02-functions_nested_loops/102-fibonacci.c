@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int i, l, k = 1, j = 1;
+	long int i, l, k = 1, j = 1;
 
 	for (i = 1; i <= 50; i++)
 	{
