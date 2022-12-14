@@ -14,6 +14,6 @@ int main(void)
 		j = j + k;
 		k = l;
 	}
-	printf("%ld\n",j);
+	printf("%ld\n", j);
 	return (0);
 }
