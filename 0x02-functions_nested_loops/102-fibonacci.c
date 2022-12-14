@@ -10,10 +10,10 @@ int main(void)
 	for (i = 1; i <= 50; i++)
 	{
 		l = j;
-		printf("%d, ", j);
+		printf("%ld, ", j);
 		j = j + k;
 		k = l;
 	}
-	printf("%d\n", j);
+	printf("%ld\n", j);
 	return (0);
 }
