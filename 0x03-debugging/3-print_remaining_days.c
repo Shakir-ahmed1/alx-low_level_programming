@@ -19,7 +19,7 @@ if (month == 2 && day == 60)
 {
 day += 0;
 }
-else if (month > 2 & day > 60)
+else if (month > 2 && day > 60)
 {
 day++;
 }
