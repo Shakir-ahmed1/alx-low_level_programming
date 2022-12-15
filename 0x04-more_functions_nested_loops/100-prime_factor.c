@@ -25,22 +25,9 @@ return (1);
  */
 int main(void)
 {
-long long int i, number;
+long long int number;
 
 number = 612852475143;
-i = 2;
-
-while (is_prime(number) != 1)
-{
-if (number % i == 0 && is_prime(i))
-{
-number = number / i;
-i = 2;
-}
-
-i++;
-}
-
-printf("%lld\n", number);
+is_prime(number);
 return (0);
 }
