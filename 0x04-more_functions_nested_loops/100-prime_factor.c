@@ -4,6 +4,7 @@
  * @num: the number to be checked
  * Return: 1 if the number is a prime 0 if the number is not a prime
  */
+int is_prime(long long int);
 int is_prime(long long int num)
 {
 long long int i;
