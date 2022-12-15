@@ -5,7 +5,7 @@
  */
 void print_number(int n)
 {
-int i, j, k, num, l, number;
+int i, k, num, number;
 number = n;
 num = number;
 k = 1;
@@ -21,5 +21,4 @@ number = number % k;
 k /= 10;
 }
 putchar('0' + number % 10);
-return (0);
 }
