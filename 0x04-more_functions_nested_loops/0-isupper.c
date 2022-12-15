@@ -4,7 +4,7 @@
  * @c: the character
  * Return: 0 if not upper case 1 if upper case
  */
-int _isupper(int c);
+int _isupper(int c)
 {
 	if (c >= 65 && c <= 95)
 	{
