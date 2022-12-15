@@ -4,10 +4,10 @@
  * @num: the number to be checked
  * Return: always 1 if the number is a prime 0 if the number is not a prime
  */
-int is_prime(long long int num);
-int is_prime(long long int num)
+long int is_prime(long int num);
+long int is_prime(long int num)
 {
-long long int i;
+long int i;
 
 for (i = 2; i < num; i++)
 {
@@ -25,7 +25,7 @@ return (1);
  */
 int main(void)
 {
-long long int i, number;
+long int i, number;
 
 number = 612852475143;
 i = 2;
@@ -41,6 +41,6 @@ i = 2;
 i++;
 }
 
-printf("%lld\n", number);
+printf("%ld\n", number);
 return (0);
 }
