@@ -24,7 +24,7 @@ return (1);
  */
 int main(void)
 {
-long long int i, number, p;
+long long int i, number;
 
 number = 612852475143;
 i = 2;
@@ -35,7 +35,6 @@ if (number % i == 0)
 {
 if (is_prime(i))
 {
-p = i;
 number = number / i;
 i = 2;
 }
