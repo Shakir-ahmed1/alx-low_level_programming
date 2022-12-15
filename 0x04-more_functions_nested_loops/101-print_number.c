@@ -16,9 +16,9 @@ num /= 10;
 }
 for (i = 0; k != 1; i++)
 {
-putchar('0' + (number / k));
+_putchar('0' + (number / k));
 number = number % k;
 k /= 10;
 }
-putchar('0' + number % 10);
+_putchar('0' + number % 10);
 }
