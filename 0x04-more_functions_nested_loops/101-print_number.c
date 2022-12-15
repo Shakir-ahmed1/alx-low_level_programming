@@ -5,19 +5,17 @@
  */
 void print_number(int n)
 {
-int i, k, j, num, number;
+int i, k, num, number;
 
+number = n;
+num = number;
+k = 1;
 if (number < 0)
 {
-	j = -1;
 	number = number * -1;
 	_putchar('-');
 }
 
-	
-number = n;
-num = number;
-k = 1;
 while (num > 9)
 {
 k *= 10;
