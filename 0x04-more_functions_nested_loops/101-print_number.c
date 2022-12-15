@@ -8,14 +8,13 @@ void print_number(int n)
 int i, k, num, number;
 
 number = n;
-num = number;
 k = 1;
 if (number < 0)
 {
 	number = number * -1;
 	_putchar('-');
 }
-
+num = number;
 while (num > 9)
 {
 k *= 10;
