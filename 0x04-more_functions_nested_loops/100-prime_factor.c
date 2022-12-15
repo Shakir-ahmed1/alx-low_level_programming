@@ -31,16 +31,15 @@ i = 2;
 
 while (is_prime(number) != 1)
 {
-if (number % i == 0)
-{
-if (is_prime(i))
+if (number % i == 0 && is_prime(i))
 {
 number = number / i;
 i = 2;
 }
-}
+
 i++;
 }
+
 printf("%lld\n", number);
 return (0);
 }
