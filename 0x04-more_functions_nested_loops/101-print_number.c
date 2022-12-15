@@ -5,7 +5,16 @@
  */
 void print_number(int n)
 {
-int i, k, num, number;
+int i, k, j, num, number;
+
+if (number < 0)
+{
+	j = -1;
+	number = number * -1;
+	_putchar('-');
+}
+
+	
 number = n;
 num = number;
 k = 1;
