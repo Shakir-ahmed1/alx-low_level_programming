@@ -12,6 +12,10 @@ if (*str++ != '\0')
 {
 	continue;
 }
+else
+{
+	break;
+}
 }
 _putchar('\n');
 }
