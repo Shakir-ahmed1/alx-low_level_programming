@@ -31,7 +31,7 @@ _putchar(*str++);
 }
 else if (i > (size - 1) / 2 && size % 2 == 1)
 {
-putchar(*str++);
+_putchar(*str++);
 }
 else
 {
@@ -40,5 +40,6 @@ else
 	{
 		continue;
 	}
+}
 }
 }
