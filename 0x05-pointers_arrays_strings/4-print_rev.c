@@ -22,7 +22,7 @@ int _strlen(char *s)
  */
 void print_rev(char *s)
 {
-	int size = _strlen(s);
+	int size = _strlen(s)-1;
 
 	while (size >= 0)
 	{
