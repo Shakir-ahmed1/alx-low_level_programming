@@ -2,7 +2,7 @@
 /**
  * _strlen - returns the length of the given string
  * @s: the string to be reversed
- * Returns: the length of the string
+ * Return: the length of the string
  */
 int _strlen(char *s)
 {
@@ -24,13 +24,13 @@ void rev_string(char *s)
 {
 int size = _strlen(s), i;
 char s1[1000];
-for (i = 0; i < size; i++)
-{
-    s1[i] = s[size -i-1];
-}
-for (i = 0; i < size; i++)
-{
-    s[i] = s1[i];
-}   
-}
 
+for (i = 0; i < size; i++)
+{
+	s1[i] = s[size - i - 1];
+}
+for (i = 0; i < size; i++)
+{
+	s[i] = s1[i];
+}
+}
