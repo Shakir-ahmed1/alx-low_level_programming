@@ -23,7 +23,7 @@ return (i);
 void rev_string(char *s)
 {
 int size = _strlen(s), i;
-char s1[size];
+char s1[];
 
 for (i = 0; i < size; i++)
 {
