@@ -13,4 +13,5 @@ if (*str++ != '\0')
 	continue;
 }
 }
+_putchar('\n');
 }
