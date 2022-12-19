@@ -27,7 +27,7 @@ char *s1;
 
 for (i = 0; i < size; i++)
 {
-s1[i] = s[size - i - 1];
+*(s + i) = s[size - i - 1];
 }
 for (i = 0; i < size; i++)
 {
