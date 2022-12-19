@@ -7,12 +7,8 @@
 int _atoi(char *s)
 {
 
-int i, num = 1,num2 = 1;
-int control1, control2;
-
-control1 = 1;
-control2 = 1;
-
+int i, num = 0, num2 = 1;
+int control1 = 1, control2 = 1;
 for (i = 0; s[i] != '\0' ; i++)
 {
 if (control1 == 1 && control2 == 1)
@@ -47,6 +43,5 @@ else
 break;
 }
 }
-return num * num2;
+return (num *num2);
 }
-
