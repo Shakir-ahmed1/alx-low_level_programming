@@ -36,10 +36,11 @@ _putchar(*str++);
 else
 {
 	i++;
-	if(*str++)
+	if (*str++)
 	{
 		continue;
 	}
 }
 }
+_putchar('\n');
 }
