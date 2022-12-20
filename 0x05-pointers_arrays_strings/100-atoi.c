@@ -7,7 +7,8 @@
 int _atoi(char *s)
 {
 
-int i, num = 0, num2 = 1;
+int i, num2 = 1;
+unsigned int num = 0;
 int control1 = 1, control2 = 1;
 for (i = 0; s[i] != '\0' ; i++)
 {
