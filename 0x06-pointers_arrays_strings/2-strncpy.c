@@ -4,6 +4,7 @@
  * @dest: the destination address
  * @src: the source address
  * @n: the limit of copying string
+ * Return: the address of the copied string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
