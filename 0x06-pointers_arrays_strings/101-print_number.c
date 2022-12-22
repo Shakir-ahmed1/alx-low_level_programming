@@ -5,16 +5,16 @@
  */
 void print_number(int n)
 {
-	int i, j, num, length = 0;
-	unsigned int k;
+	int i, j, length = 0;
+	unsigned int k, num;
 
-	num = n;
+
 	if (n < 0)
 	{
 		_putchar('-');	
 		n *= -1;
-		num *= -1;
 	}
+	num = n;
 	for (i = 0; num >= 10; i++)
 	{
 		num = num / 10;
