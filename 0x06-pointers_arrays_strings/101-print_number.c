@@ -11,9 +11,12 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		num = -1 * n;
 	}
+	else
+	{
 	num = n;
+	}
 	for (i = 0; num >= 10; i++)
 	{
 		num = num / 10;
