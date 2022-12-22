@@ -5,10 +5,11 @@
  */
 void print_number(int n)
 {
-	int i, j, num, k, length = 0;
-	
+	int i, j, k, length = 0;
+	unsigned int num;
+
 	num = n;
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar('-');
 		num *= -1;
