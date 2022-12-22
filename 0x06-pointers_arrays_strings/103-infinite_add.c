@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * _strlen - it counts the size of the string
  * @st: the address of the string
@@ -50,7 +50,7 @@ return (pt);
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i, j, c, length, l1, l2;
+int i, c, length, l1, l2;
 
 l1 = _strlen(n1);
 l2 = _strlen(n2);
