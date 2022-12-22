@@ -8,10 +8,9 @@ void print_number(int n)
 	int i, j, length = 0;
 	unsigned int k, num;
 
-
 	if (n < 0)
 	{
-		_putchar('-');	
+		_putchar('-');
 		n *= -1;
 	}
 	num = n;
