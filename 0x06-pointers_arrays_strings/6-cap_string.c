@@ -8,7 +8,10 @@ char *cap_string(char *a)
 {
 int i, j;
 char b[] = " \n\t,;.!\?\"(){}";
-
+if (a[0] >= 'a' && a[0] <= 'z')
+{
+	a[0] = a[0] -32;
+}
 for (i = 0; a[i] != '\0'; i++)
 {
 for (j = 0; b[j] != '\0'; j++)
