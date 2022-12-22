@@ -17,4 +17,4 @@ char *rot13(char *a)
                 }
         return (a);
 }
-
+}
