@@ -10,12 +10,16 @@ char *rot13(char *a)
 
         for (i = 0; a[i] != '\0'; i++)
         {
+		int j;
 
                 if (a[i] >= 'a' && a[i] <= 'z')
                 {
                         a[i] = (((a[i] - 'a')+ 13) % 26) + 'a';
                 }
-        return (a);
-}
+		for(j = 0; (a[i] >= 'A' && a[i] <= 'Z') && j == 0; j++)
+		{
+			a[i] = (((a[i] - 'A') + 13) % 26) + 'A';
+		}
+	}
 return (a);
 }
