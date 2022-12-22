@@ -12,7 +12,7 @@ for (i = 0; st[i] != '\0'; i++)
 {
 continue;
 }
-return i;
+return (i);
 }
 /**
  * filler - it fills 0 to the string untill it gets the desired length
@@ -28,7 +28,7 @@ pt = st;
 l = _strlen(st);
 for (i = 0; i < len; i++)
 {
-if ( i < len - l)
+if (i < len - l)
 {
 pt[i] = '0';
 }
@@ -60,7 +60,7 @@ if (l2 > l1)
 {
 length = l2;
 }
-if ( l1 > size_r || l2 > size_r)
+if (l1 > size_r || l2 > size_r)
 {
 return (0);
 }
@@ -69,8 +69,8 @@ for (i = 0; i < size_r; i++)
 r[i] = ' ';
 }
 c = 0;
-n1 = filler(n1,size_r);
-n2 = filler(n2,size_r);
+n1 = filler(n1, size_r);
+n2 = filler(n2, size_r);
 for (i = 0; i < size_r; i++)
 {
 r[size_r - i] =(((n1[l1 - i] - '0') + (n2[l2 - i] - '0') + c) % 10) + '0';
@@ -83,7 +83,7 @@ else
 c = 0;
 }
 }
-if ( size_r > length && c == 1)
+if (size_r > length && c == 1)
 {
 r[size_r - i] = '1';
 }
