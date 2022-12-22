@@ -1,26 +1,32 @@
 #include "main.h"
 /**
- * cap_string - it capitalizes the given string
- * @a: the string
- * Return: a capitalized string
- */
-char *cap_string(char *a)
+*cap_string - function that capitalize first character of a word
+*@str: string to capitalize
+*Return:returns the capitalized string
+*/
+char *cap_string(char *str)
 {
-	int i, j;
-	char b[] = " \n\t,;.!\?\"(){}";
+int index = 0;
 
-	for (i = 0; a[i] != '\0'; i++)
-	{
-		for (j = 0; b[j] != '\0'; j++)
-		{
-			if (a[i] == b[j])
-			{
-			if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-			{
-				a[i + 1] = a[i + 1] - 32;
-			}
-			}
-		}
-	}
-	return (a);
+while (str[++index])
+{
+while (!(str[index] >= 'a' && str[index] <= 'z'))
+index++;
+
+if (str[index - 1] == ' ' ||
+str[index - 1] == '\t' ||
+str[index - 1] == '\n' ||
+str[index - 1] == ',' ||
+str[index - 1] == ';' ||
+str[index - 1] == '.' ||
+str[index - 1] == '!' ||
+str[index - 1] == '?' ||
+str[index - 1] == '"' ||
+str[index - 1] == '(' ||
+str[index - 1] == ')' ||
+str[index - 1] == '{' ||
+str[index - 1] == '}')
+str[index] -= 32;
+}
+return (str);
 }
