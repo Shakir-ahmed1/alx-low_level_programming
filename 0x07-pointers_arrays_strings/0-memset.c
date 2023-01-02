@@ -4,6 +4,7 @@
  * @s: the string to be filled
  * @b: the constant byte
  * @n: the length of bytes to be filled
+ * Return: the string s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
