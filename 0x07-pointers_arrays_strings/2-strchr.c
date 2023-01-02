@@ -3,7 +3,8 @@
  * _strchr - it searchs for a character in string
  * @s: the string
  * @c: the character to be searched
- * Return: NULL if the character not found. the address of the first occurence if found
+ * Return: NULL if the character not found.
+ * the address of the first occurence if found
  */
 char *_strchr(char *s, char c)
 {
