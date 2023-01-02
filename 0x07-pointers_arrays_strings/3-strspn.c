@@ -3,6 +3,7 @@
  * _strspn - gets the length of a prefix substring
  * @s: the full string
  * @accept: the prifix substring
+ * Return: the length of the substring
  */
 unsigned int _strspn(char *s, char *accept)
 {
@@ -18,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if ( *(accept + j) == '\0')
+		if (*(accept + j) == '\0')
 		{
 			break;
 		}
