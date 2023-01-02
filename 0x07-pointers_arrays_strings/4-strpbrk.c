@@ -3,7 +3,7 @@
  * _strpbrk - searches a string for any of a set of bytes
  * @s: the main string
  * @accept: the substring to be indexed
- * Retrun: the string including the first occurance of the substring
+ * Return: the string including the first occurance of the substring
  */
 char *_strpbrk(char *s, char *accept)
 {
@@ -20,7 +20,7 @@ char *_strpbrk(char *s, char *accept)
 		}
 		if (*(accept + j) != '\0')
 		{
-			return (s+i);
+			return (s + i);
 		}
 	}
 
