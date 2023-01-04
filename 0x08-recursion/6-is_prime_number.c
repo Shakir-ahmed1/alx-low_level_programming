@@ -10,7 +10,7 @@ int is_prime_number(int n)
 {
 	if (n == 1)
 	{
-		return 0;
+		return (0);
 	}
 	else
 	{
@@ -30,7 +30,7 @@ int _prime(int n, int x)
 		return (0);
 	}
 	if (x == n)
-	{	
+	{
 		return (1);
 	}
 	else if (n % x == 0 && x != 1)
@@ -39,6 +39,6 @@ int _prime(int n, int x)
 	}
 	else
 	{
-		return (_prime(n,x+1));
+		return (_prime(n, x + 1));
 	}
 }
