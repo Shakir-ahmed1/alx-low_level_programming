@@ -1,5 +1,5 @@
 #include "main.h"
-int _sqrt(int,int);
+int _sqrt(int, int);
 /**
  * _sqrt_recursion - it finds a square root of a number
  * @n: the input number
