@@ -4,8 +4,9 @@
  * main - it multiplies two numbers
  * @argc: the argument size
  * @argv: the address to the first string
+ * Return: if supplied two integer arguments 0, 1 if not
  */
-int main(int argc,char **argv)
+int main(int argc, char **argv)
 {
 	if (argc == 3)
 	{
