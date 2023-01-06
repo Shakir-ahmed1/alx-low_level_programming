@@ -8,7 +8,7 @@ int main(int argc,int **argv)
 {
 	if (argc == 3)
 	{
-		printf("%d", argv[1] * argv[2]);
+		printf("%d", *argv[1] * *argv[2]);
 		return (0);
 	}
 	else
