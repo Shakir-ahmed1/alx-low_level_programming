@@ -1,0 +1,29 @@
+#!/usr/bin/perl -w
+
+sub process_file
+{
+	my ($file) = @_;
+
+	if (!open(IN, '-|', "gcc -fpreprocessed -dD -E $file"))
+	{
+		print "Error: Cannot open file $file\n";
+		return;
+	}
+
+	my $i = 1;
+	while (<IN>)
+	{
+		my $line = $_;
+
+		if ($line =~ /^\s*\b(static\b.*)$/)
+		{
+			print "$i: $1\n";
+		}
+		++$i;
+	}
+}
+
+foreach (@ARGV)
+{
+	process_file($_);
+}
