@@ -1,10 +1,7 @@
-#include<stdio.h>
 #include "main.h"
 
-int main()
+int main(void)
 {
-	int i;
-
-	(void)i;
-	return 0;
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+    return (0);
 }
