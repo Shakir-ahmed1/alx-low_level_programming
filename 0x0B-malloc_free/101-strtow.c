@@ -1,6 +1,88 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+int len(char);
+int word_count(char);
+int word_length(char, int);
+char *word(char, int);
+int word_count(char *str)
+{
+	int i = 0, l, k, words = 0;
+	l = len(str);
+	for (i = 0; i < l; i++)
+	{
+		k = 0;
+		while (str[i] != ' ' && str[i] != '\0')
+		{
+			k++;
+			i++;
+		}
+		if (k > 0)
+			words++;
+	}
+	return words;
+}
+int word_length(char *str, int ord)
+{
+	int i = 0, l, k, words = 0;
+	l = len(str);
+	for (i = 0; i < l; i++)
+	{
+		k = 0;
+		while (str[i] != ' ' && str[i] != '\0')
+		{
+			k++;
+			i++;
+		}
+		if (k > 0)
+			words++;
+		if (ord == words)
+			break;
+	}
+	return k;
+}
+int len(char *str)
+{
+	i = 0;
+	if (str != NULL)
+	{
+		while(str[i] != '\0')
+			i++;
+	}
+	return i;
+}
+char *word(char *str, int ord)
+{
+	int i = 0, l, k, words = 0,m;
+	l = len(str);
+	for (i = 0; i < l; i++)
+	{
+	k = 0;
+
+	while (str[i] != ' ' && str[i] != '\0')
+	{
+	k++;
+	i++;
+	}
+	if (k > 0)
+	{
+	words++;
+	}
+	if (ord == words)
+	{
+	printf("%c in",str[i - k]);
+	char *mc;
+	mc = malloc(sizeof(char) * k);
+	for (m = 0;m < k; m++)
+	{
+	printf("%c",str[i - k + m]);
+	mc[m] = str[i - k + m];
+	}
+	return mc;
+	}
+	}
+	return NULL;
+}
 /**
  * strtow - it splits a string to words by using space as separator
  * @str: the string to be splited
@@ -9,52 +91,32 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, j = 0, k = 0, h = 0, space = 0;
-	char **mc;
+	int i, j, wc;
+	char **mcc;
 
-	while (str[i] != '\0')
-	{
-		i++;
-		if (str[i] == ' ')
-			space++;
-	}
-	if(*str == '\0')
+	wc = word_count(str);
+	if (wc == 0)
 		return (NULL);
-	mc = (char **)malloc(sizeof(char *) * space + 1);
-	if (mc == NULL)
+	mcc = (char **) malloc(sizeof(char *) * wc);
+	if (mcc == NULL)
 		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
+	for (i = 0; i < wc; i++)
 	{
-		k = 0;
-		while (str[i] != ' ' && str[i] != '\0')
+		mcc[i] = malloc(sizeof(int *) * word_length(str,i));
+		if ( mcc[i] == NULL)
 		{
-			k++;
-			i++;
-		}
-		if (str[i] == ' ' && k == 0)
-		{
-			i++;
-			continue;
-		}
-		mc[j] = malloc(sizeof(char) * k + 1);
-		if (mc[j] == NULL)
-		{
-			while (i)
+			while (i >= 0)
 			{
-				free(mc[j]);
+				free(mcc[i]);
 				i--;
 			}
-			free(mc);
+			free(mcc);
 			return (NULL);
 		}
-		for (h = 0; h < k; h++)
-			mc[j][h] = str[i - k + h];
-
-		if (str[i] == '\0')
-			break;
-		i++;
-		j++;
+		for (j = 0; j < word_length(str, i); j++)
+		{
+			mcc[i][j] = word(str, i);
+		}
 	}
-	return (mc);
+	return (mcc);
 }
