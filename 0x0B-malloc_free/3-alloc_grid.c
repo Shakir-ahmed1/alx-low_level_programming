@@ -29,6 +29,7 @@ int **alloc_grid(int width, int height)
 			{
 				free(mcc[i]);
 			}
+		}
 	}
 
 	for (i = 0; i < (height); i++)
