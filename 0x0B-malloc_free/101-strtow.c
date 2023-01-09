@@ -15,13 +15,13 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		i++;
-		if (str[i] = ' ')
+		if (str[i] == ' ')
 			space++;
 	}
-	if(str == "")
+	if(*str == '\0')
 		return (NULL);
 	mc = (char **)malloc(sizeof(char *) * space);
-	if (mc == NULL || str == "")
+	if (mc == NULL)
 		return (NULL);
 	i = 0;
 	while (str[i] != '\0')
