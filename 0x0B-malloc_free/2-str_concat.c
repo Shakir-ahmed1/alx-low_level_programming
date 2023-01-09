@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * str_concat - it returns the concatinated address of the given strings
  * @s1: string 1
@@ -10,11 +11,15 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0, k;
 	char *mc;
 
-	while(s1[i] != '\0')
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	while (s1[i] != '\0')
 		i++;
-	while(s2[j] != '\0')
+	while (s2[j] != '\0')
 		j++;
-	mc = malloc(sizeof(char) * i + j);
+	mc = malloc(sizeof(char) * (i + j));
 
 	if (mc == NULL)
 		return (NULL);
