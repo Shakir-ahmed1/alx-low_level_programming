@@ -1,4 +1,5 @@
 #include<stdlib.h>
+#include "main.h"
 /**
  * _strdup - it copies a given string to a new allocated memory
  * @str: the string to be copied

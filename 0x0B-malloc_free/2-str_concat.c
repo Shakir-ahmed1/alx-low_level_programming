@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 /**
  * str_concat - it returns the concatinated address of the given strings
  * @s1: string 1
@@ -19,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 		i++;
 	while (s2[j] != '\0')
 		j++;
-	mc = malloc(sizeof(char) * (i + j));
+	mc = malloc(sizeof(char) * (i + j + 1));
 
 	if (mc == NULL)
 		return (NULL);
