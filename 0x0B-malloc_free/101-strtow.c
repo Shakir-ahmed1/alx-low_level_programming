@@ -15,7 +15,7 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		i++;
-		if (str[i] == ' ' &&)
+		if (str[i] == ' ')
 			space++;
 	}
 	if(*str == '\0')
