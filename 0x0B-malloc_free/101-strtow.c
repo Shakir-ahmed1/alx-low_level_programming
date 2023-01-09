@@ -20,7 +20,7 @@ char **strtow(char *str)
 	}
 	if(*str == '\0')
 		return (NULL);
-	mc = (char **)malloc(sizeof(char *) * space - 1);
+	mc = (char **)malloc(sizeof(char *) * space);
 	if (mc == NULL)
 		return (NULL);
 	i = 0;
