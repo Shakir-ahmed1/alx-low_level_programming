@@ -18,6 +18,8 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 
 	mcc = (int **)malloc(sizeof(int *) * height);
+	if (mcc == NULL)
+		return (NULL);
 	for (i = 0; i < height; i++)
 		mcc[i] = (int *)malloc(sizeof(int) * width);
 
