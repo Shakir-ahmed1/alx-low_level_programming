@@ -31,10 +31,6 @@ char **strtow(char *str)
 			i++;
 			continue;
 		}
-		if (str[i] == '\0')
-		{
-			break;
-		}
 		mc[j] = malloc(sizeof(char) * k);
 		if (mc[j] == NULL)
 		{
@@ -48,6 +44,9 @@ char **strtow(char *str)
 		}
 		for (h = 0; h < k; h++)
 			mc[j][h] = str[i - k + h];
+
+		if (str[i] == '\0')
+			break;
 		i++;
 		j++;
 	}
