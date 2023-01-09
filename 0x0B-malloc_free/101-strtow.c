@@ -1,10 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-int len(char);
-int word_count(char);
-int word_length(char, int);
-char *word(char, int);
+int len(char *);
+int word_length(char *, int);
+char *word(char *, int);
 int word_count(char *str)
 {
 	int i = 0, l, k, words = 0;
@@ -43,7 +42,7 @@ int word_length(char *str, int ord)
 }
 int len(char *str)
 {
-	i = 0;
+	int i = 0;
 	if (str != NULL)
 	{
 		while(str[i] != '\0')
@@ -54,7 +53,9 @@ int len(char *str)
 char *word(char *str, int ord)
 {
 	int i = 0, l, k, words = 0,m;
+	char *mc;
 	l = len(str);
+
 	for (i = 0; i < l; i++)
 	{
 	k = 0;
@@ -71,7 +72,6 @@ char *word(char *str, int ord)
 	if (ord == words)
 	{
 	printf("%c in",str[i - k]);
-	char *mc;
 	mc = malloc(sizeof(char) * k);
 	for (m = 0;m < k; m++)
 	{
@@ -115,7 +115,8 @@ char **strtow(char *str)
 		}
 		for (j = 0; j < word_length(str, i); j++)
 		{
-			mcc[i][j] = word(str, i);
+			char *str1 = word(str, i);
+			mcc[i][j] = str1[j];
 		}
 	}
 	return (mcc);
