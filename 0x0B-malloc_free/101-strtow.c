@@ -9,13 +9,19 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, j = 0, k = 0, h = 0;
+	int i = 0, j = 0, k = 0, h = 0, space = 0;
 	char **mc;
 
 	while (str[i] != '\0')
+	{
 		i++;
-	mc = (char **)malloc(sizeof(char *) * i);
-	if (mc == NULL)
+		if (str[i] = ' ')
+			space++;
+	}
+	if(str == "")
+		return (NULL);
+	mc = (char **)malloc(sizeof(char *) * space);
+	if (mc == NULL || str == "")
 		return (NULL);
 	i = 0;
 	while (str[i] != '\0')
