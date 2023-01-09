@@ -15,7 +15,7 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		i++;
-		if (str[i] == ' ')
+		if (str[i] == ' ' &&)
 			space++;
 	}
 	if(*str == '\0')
@@ -37,7 +37,7 @@ char **strtow(char *str)
 			i++;
 			continue;
 		}
-		mc[j] = malloc(sizeof(char) * k - 1);
+		mc[j] = malloc(sizeof(char) * k);
 		if (mc[j] == NULL)
 		{
 			while (i)
