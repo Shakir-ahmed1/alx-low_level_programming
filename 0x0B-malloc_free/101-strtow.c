@@ -31,6 +31,10 @@ char **strtow(char *str)
 			i++;
 			continue;
 		}
+		if (str[i] == '\0')
+		{
+			break;
+		}
 		mc[j] = malloc(sizeof(char) * k);
 		if (mc[j] == NULL)
 		{
