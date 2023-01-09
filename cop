@@ -1,4 +1,0 @@
-#!/bin/bash
-# Ask the user for their name
-read varname
-cp $varname 0x09-static_libraries/$varname
