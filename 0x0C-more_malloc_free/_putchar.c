@@ -2,3 +2,4 @@
 int _putchar(char a)
 {
 	return (int) putchar(a);
+}
