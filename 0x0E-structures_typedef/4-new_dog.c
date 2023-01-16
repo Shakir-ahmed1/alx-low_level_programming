@@ -1,4 +1,9 @@
 #include "dog.h"
+/**
+ * _strlen - calculates the string length
+ * @s: the string
+ * Return: the length of the string
+ */
 int _strlen(char *s)
 {
 int i;
@@ -9,15 +14,15 @@ return (i + 1);
 
 /**
 * _strcpy - copies a string from an address to another
-* @src - source string
-* @dest - destination string
+* @src: source string
+* @dest: destination string
 * Return: the destination address
 */
-char *_strcpy(char *src,char  *dest)
+char *_strcpy(char *src, char  *dest)
 {
-int i = 0;
+int i;
 
-for (;src[i] != '\0'; i++)
+for (i = 0; src[i] != '\0'; i++)
 dest[i] = src[i];
 dest[i] = '\0';
 return (dest);
