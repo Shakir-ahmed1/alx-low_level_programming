@@ -1,4 +1,12 @@
 #include "dog.h"
+int _strlen(*s)
+{
+        int i;
+        for (i = 0; s[i] != '\0';)
+                i++;
+        return (i + 1);
+}
+
 /**
  * _strcpy - copies a string from an address to another
  * @src - source string
@@ -29,14 +37,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (nd == NULL || name == NULL || owner == NULL)
 		return (NULL);
 
-	nd->name = malloc(sizeof(name));
+	nd->name = malloc(_strlen(name));
 	if (nd->name == NULL)
 		return (NULL);
 	nd->name = _strcpy(name, nd->name);
 
 	nd->age = age;
 
-	nd->owner = malloc(sizeof(owner));
+	nd->owner = malloc(_strlen(owner));
 	if (nd->owner == NULL)
 		return (NULL);
 	nd->owner = _strcpy(owner, nd->owner);
