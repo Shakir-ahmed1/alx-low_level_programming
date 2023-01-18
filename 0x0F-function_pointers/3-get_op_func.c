@@ -2,7 +2,7 @@
 /**
  * get_op_func - it selects the correct function to do the operation
  * @s: the operator passed by the program
- * This function returns a pointer to the function that
+ * Return: This function returns a pointer to the function that
  * corresponds to the operator given as a parameter.
  * Example: get_op_func("+") should return a pointer to the function op_add
  * You are not allowed to use switch statements
