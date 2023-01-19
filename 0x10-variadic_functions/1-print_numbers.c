@@ -17,8 +17,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			printf("%d%s", i, separator);
 		else if (!separator)
 			printf("%d", i);
+		if (j == n - 1)
+			printf("\n");
 		j++;
 	}
-	printf("\n");
 	va_end(ap);
 }
