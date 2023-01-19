@@ -21,5 +21,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			printf("%d\n", i);
 		j++;
 	}
-
+	va_end(ap);
 }
