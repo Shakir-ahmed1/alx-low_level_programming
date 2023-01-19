@@ -15,10 +15,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		if (j + 1 < n && separator)
 			printf("%d%s", i, separator);
-		else if (j + 1 < n && !separator)
+		else if (j < n && !separator)
 			printf("%d", i);
 		j++;
 	}
-	printf("%d\n", i);
+	printf("\n", i);
 	va_end(ap);
 }
