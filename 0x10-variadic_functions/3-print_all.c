@@ -25,11 +25,6 @@ void print_string(va_list ar)
 	char *var;
 
 	var = va_arg(ar, char *);
-	if (var == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
 	printf("%s",var);
 }
 void print_all(const char * const format, ...)
@@ -41,7 +36,7 @@ void print_all(const char * const format, ...)
 		{'f', print_float},
 		{'s', print_string}
 	};
-	int i = 0, j = 0, k;
+	int i = 0, j = 0;
 	va_list ap;
 
 	va_start(ap, format);
@@ -59,7 +54,6 @@ void print_all(const char * const format, ...)
 			}
 			j++;
 		}
-		(void) k;
 		i++;
 	}
 	va_end(ap);
