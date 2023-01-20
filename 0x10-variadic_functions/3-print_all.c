@@ -70,11 +70,11 @@ va_start(ap, format);
 while (format && (*(format + i)))
 {
 j = 0;
-while (j < 4 )
+while (j < 4)
 {
 if (func[j].id == *(format + i))
 {
-printf("%s",separator);
+printf("%s", separator);
 func[j].print(ap);
 separator = ", ";
 break;
