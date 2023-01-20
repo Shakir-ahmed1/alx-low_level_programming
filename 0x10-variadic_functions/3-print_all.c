@@ -47,7 +47,7 @@ print_t func[] = {
 {"s", print_string}
 };
 va_start(ap, format);
-while (*(format + i) && format)
+while ((*(format + i)) && format)
 {
 j = 0;
 while (j < 4 && (*(format + i) != *(func[j].id)))
