@@ -46,7 +46,7 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	va_start(ap, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format)
 	{
 		j = 0;
 		while (j < 4)
