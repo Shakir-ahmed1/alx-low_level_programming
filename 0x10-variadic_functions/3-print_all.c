@@ -24,12 +24,12 @@ void print_string(va_list ar)
 {
 	char *var;
 
+	var = va_arg(ar, char *);
 	if (var == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	var = va_arg(ar, char *);
 	printf("%s",var);
 }
 void print_all(const char * const format, ...)
