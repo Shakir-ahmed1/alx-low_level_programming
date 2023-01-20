@@ -47,20 +47,25 @@ print_t func[] = {
 {"s", print_string}
 };
 va_start(ap, format);
-while ((*(format + i)) && format)
+while (format && (*(format + i)))
 {
 j = 0;
+
 while (j < 4 && (*(format + i) != *(func[j].id)))
-	j++;
+j++;
 
 if (j < 4)
 {
-	printf("%s", separator);
-	func[j].print(ap);
-	separator = ", ";
+printf("%s", separator);
+func[j].print(ap);
+separator = ", ";
 }
+
 i++;
+
 }
+
 printf("\n");
+
 va_end(ap);
 }
