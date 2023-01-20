@@ -61,10 +61,10 @@ int i = 0, j = 0;
 char *separator = "";
 
 print_t func[] = {
-{"c", print_char},
-{"i", print_int},
-{"f", print_float},
-{"s", print_string}
+{'c', print_char},
+{'i', print_int},
+{'f', print_float},
+{'s', print_string}
 };
 va_start(ap, format);
 while (format && (*(format + i)))
