@@ -34,40 +34,34 @@ void print_string(va_list ar)
 }
 void print_all(const char * const format, ...)
 {
-va_list args;
-
+print_t func[] =
+{
+{'c', print_char},
+{'i', print_int},
+{'f', print_float},
+{'s', print_string}
+};
 int i = 0, j = 0;
-
+va_list ap;
 char *separator = "";
 
-print_t funcs[] = {
-{"c", print_char},
-{"i", print_int},
-{"f", print_float},
-{"s", print_string}
-};
-
-va_start(args, format);
-
-while (format && (*(format + i)))
+va_start(ap, format);
+while (*(format + i) != '\0' && format)
 {
 j = 0;
-
-while (j < 4 && (*(format + i) != *(funcs[j].id)))
-j++;
-
-if (j < 4)
+while (j < 4)
 {
-printf("%s", separator);
-funcs[j].print(args);
+if (func[j].id == *(format + i))
+{
+printf("%s",separator);
+func[j].print(ap);
 separator = ", ";
+break;
 }
-
+j++;
+}
 i++;
-
 }
-
 printf("\n");
-
-va_end(args);
+va_end(ap);
 }
