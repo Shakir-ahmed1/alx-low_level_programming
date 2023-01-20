@@ -34,17 +34,18 @@ void print_string(va_list ar)
 }
 void print_all(const char * const format, ...)
 {
-print_t func[] =
-{
+va_list ap;
+
+int i = 0, j = 0;
+
+char *separator = "";
+
+print_t func[] = {
 {"c", print_char},
 {"i", print_int},
 {"f", print_float},
 {"s", print_string}
 };
-int i = 0, j = 0;
-va_list ap;
-char *separator = "";
-
 va_start(ap, format);
 while (*(format + i) && format)
 {
