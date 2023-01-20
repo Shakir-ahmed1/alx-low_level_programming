@@ -1,25 +1,41 @@
 #include "variadic_functions.h"
+/**
+ * print_char - prints char
+ * @ar: the va_list
+ */
 void print_char(va_list ar)
 {
 	char var;
-	
+
 	var = va_arg(ar, int);
-	printf("%c",var);
+	printf("%c", var);
 }
+/**
+ * print_int - prints int
+ * @ar: the va_list
+ */
 void print_int(va_list ar)
 {
 	int var;
 
 	var = va_arg(ar, int);
-	printf("%d",var);
+	printf("%d", var);
 }
+/**
+ * print_float - prints float
+ * @ar: the va_list
+ */
 void print_float(va_list ar)
 {
 	float var;
 
 	var = va_arg(ar, double);
-	printf("%f",var);
+	printf("%f", var);
 }
+/**
+ * print_string - prints string
+ * @ar: the va_list
+ */
 void print_string(va_list ar)
 {
 	char *var;
@@ -30,8 +46,12 @@ void print_string(va_list ar)
 		printf("(nil)");
 		return;
 	}
-	printf("%s",var);
+	printf("%s", var);
 }
+/**
+ * print_all - prints all arguments passed
+ * @format: the sequence of data types in string
+ */
 void print_all(const char * const format, ...)
 {
 va_list ap;
