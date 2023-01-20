@@ -24,6 +24,11 @@ void print_string(va_list ar)
 {
 	char *var;
 
+	if (var == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
 	var = va_arg(ar, char *);
 	printf("%s",var);
 }
@@ -48,8 +53,7 @@ void print_all(const char * const format, ...)
 			if (func[j].id == format[i])
 			{
 				func[j].print(ap);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				printf(", ");
 				break;
 			}
 			j++;
@@ -57,5 +61,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(ap);
+	printf("\b\b");
 	printf("\n");
 }
