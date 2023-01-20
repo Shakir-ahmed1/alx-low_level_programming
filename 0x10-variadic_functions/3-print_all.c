@@ -47,7 +47,7 @@ print_t func[] = {
 {"s", print_string}
 };
 va_start(ap, format);
-while ((*(format + i)) && format)
+while (format && (*(format + i)))
 {
 j = 0;
 
