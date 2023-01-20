@@ -46,7 +46,7 @@ va_list ap;
 char *separator = "";
 
 va_start(ap, format);
-while (*(format + i) != '\0' && format)
+while (*(format + i) && format)
 {
 j = 0;
 while (j < 4 && (*(format + i) != *(func[j].id)))
