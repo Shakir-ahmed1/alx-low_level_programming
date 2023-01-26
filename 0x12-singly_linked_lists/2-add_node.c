@@ -18,12 +18,12 @@ int _strlen(const char *s)
 /**
  * add_node - adds a node at the beginning of the list
  * @head: the address of the head
- * str: the string to be displayed
+ * @str: the string to be displayed
  * Return: the address of the head
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *a,*b;
+	list_t *a, *b;
 
 	b = *head;
 
