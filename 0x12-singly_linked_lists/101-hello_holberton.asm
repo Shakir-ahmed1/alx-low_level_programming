@@ -12,7 +12,7 @@ main:
 
     ; Call printf
     call printf wrt ..plt
-    
+
     pop	rbp		; Pop stack
 
     mov	rax,0	; Exit code 0
