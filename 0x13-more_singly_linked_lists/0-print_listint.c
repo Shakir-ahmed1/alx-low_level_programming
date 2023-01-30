@@ -10,7 +10,7 @@ size_t print_listint(const listint_t *h)
 	unsigned int count = 0;
 
 	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	if (new == NULL || h == NULL)
 		return (0);
 	temp = new;
 	new->n = h->n;
