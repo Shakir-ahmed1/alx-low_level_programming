@@ -8,6 +8,7 @@ int pop_listint(listint_t **head)
 {
 	listint_t *a;
 	int c;
+
 	if (head == NULL || *head == NULL)
 		return (0);
 	a = *head;
