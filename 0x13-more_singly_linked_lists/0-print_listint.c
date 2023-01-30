@@ -6,12 +6,13 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	listint_t *new;
+	listint_t *new, *temp;
 	unsigned int count = 0;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (0);
+	temp = new;
 	new->n = h->n;
 	new->next = h->next;
 	while (new != NULL)
@@ -20,5 +21,6 @@ size_t print_listint(const listint_t *h)
 		new = new->next;
 		count++;
 	}
+	free(temp);
 	return (count);
 }
