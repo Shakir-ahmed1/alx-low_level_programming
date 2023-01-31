@@ -32,7 +32,9 @@ size_t print_listint_safe(const listint_t *head)
 		if (count != count2)
 		{
 			printf("[%p] %d\n", (void *)new, new->n);
-			break;
+			new = new->next;
+			printf("-> [%p] %d\n", (void *)new, new->n);
+			break;	
 		}
 		count++;
 		printf("[%p] %d\n", (void *)new, new->n);
