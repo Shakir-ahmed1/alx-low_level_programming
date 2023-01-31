@@ -13,12 +13,9 @@ size_t print_listint_safe(const listint_t *head)
 	new2 = malloc(sizeof(listint_t));
 	if (new == NULL || head == NULL || new2 == NULL)
 		return (0);
-	temp = new;
-	temp2 = new2;
-	new->n = head->n;
-	new->next = head->next;
-	new2->n = new->n;
-	new2->next = new->next;
+	temp = new, temp2 = new2;
+	new->n = head->n, new->next = head->next;
+	new2->n = new->n, new2->next = new->next;
 	if (new == new->next)
 	{
 		printf("[%p] %d\n", (void *)new, new->n);
@@ -46,7 +43,6 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)new, new->n);
 		new = new->next;
 	}
-	free(temp);
-	free(temp2);
+	free(temp), free(temp2);
 	return (count);
 }
