@@ -6,13 +6,9 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *new, *temp, *new2, *temp2;
+	listint_t *new = NULL, *temp, *new2 = NULL, *temp2;
 	unsigned int count = 0, count2 = 0;
 
-	new = malloc(sizeof(listint_t));
-	new2 = malloc(sizeof(listint_t));
-	if (new == NULL || head == NULL || new2 == NULL)
-		return (0);
 	temp = new, temp2 = new2;
 	new->n = head->n, new->next = head->next;
 	new2->n = new->n, new2->next = new->next;
