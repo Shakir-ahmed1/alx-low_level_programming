@@ -27,18 +27,17 @@ size_t print_listint_safe(const listint_t *head)
 		while (new->next != new2->next)
 		{
 			new2 = new2->next;
-			count2++;
-		}
+			count2++; }
 		if (count != count2)
 		{
 			printf("[%p] %d\n", (void *)new, new->n);
+			count++;
 			new = new->next;
 			printf("-> [%p] %d\n", (void *)new, new->n);
 			head = new;
 			free(temp);
 			free(temp2);
-			return (count);
-		}
+			return (count); }
 		count++;
 		printf("[%p] %d\n", (void *)new, new->n);
 		new = new->next;
