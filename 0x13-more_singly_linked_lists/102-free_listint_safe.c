@@ -19,6 +19,7 @@ size_t free_listint_safe(listint_t **h)
 		*h = new;
 		count++;
 	}
+	count = count - 2;
 	h = NULL;
 	return (count);
 }
