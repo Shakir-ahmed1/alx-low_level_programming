@@ -10,6 +10,10 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *temp = NULL;
 	listint_t *nex = NULL;
 
+	if (head == head->next)
+		return(head);
+	if (head == head->next->next)
+		return(head->next);
 	while (head != NULL)
 	{
 	if (head->next == NULL)
