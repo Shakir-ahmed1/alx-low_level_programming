@@ -8,11 +8,12 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int a = 1;
 	int i = 0;
-
 	while ((a + ((n + 1) >> 1)) <= (n) && n > 1)
 	{
 		a = a << 1;
 		i++;
+		if (i == 32)
+			break;
 	}
 	for (; i >= 0; i--)
 	{
