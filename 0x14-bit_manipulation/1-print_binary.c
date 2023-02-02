@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 		a = a << 1;
 		i++;
 	}
-	if (n == a-1 && n > 1)
+	if (n == a - 1 && n > 1)
 	{
 		a = a >> 1;
 		i--;
