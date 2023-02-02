@@ -12,7 +12,7 @@ void print_binary(unsigned long int n)
 	{
 		a = a << 1;
 		i++;
-		if (i == 32)
+		if (i == 64)
 			break;
 	}
 	for (; i >= 0; i--)
