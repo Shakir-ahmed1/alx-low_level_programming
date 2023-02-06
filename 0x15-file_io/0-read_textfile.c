@@ -20,8 +20,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 	length = read(fd, buff, letters);
-	if (length == -1)
-		return (0);
 	lseek(fd, SEEK_SET, 0);
 	close(fd);
 	for (i = 0; i < length; i++)
