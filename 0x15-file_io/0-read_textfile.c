@@ -26,9 +26,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; i < length; i++)
 	{
 		printf("%d\n", j);
-		j = _putchar(buff[i]);
-		if (j != 1)
-			return (0);
 	}
 	return (length);
 }
