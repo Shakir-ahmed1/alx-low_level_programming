@@ -10,7 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char buff[5000];
-	int fd, i, j;
+	int fd, i;
 	ssize_t length;
 	mode_t mode = O_RDONLY;
 
@@ -22,10 +22,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	length = read(fd, buff, letters);
 	lseek(fd, SEEK_SET, 0);
 	close(fd);
-	j = 0;
 	for (i = 0; i < length; i++)
 	{
-		printf("%d\n", j);
+		_putchar(buff[i]);
 	}
 	return (length);
 }
