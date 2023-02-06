@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char buff[5000];
+	char buff[50000];
 	int fd, i, j = 0;
 	ssize_t length;
 	mode_t mode = O_RDONLY;
