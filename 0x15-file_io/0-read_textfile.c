@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; i < length; i++)
 	{
 		j = _putchar(buff[i]);
-		if (j < 0)
+		if (j != 1)
 			return (0);
 	}
 	return (length);
