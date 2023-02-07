@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 	char buff[5024];
-	int fdf, fdt, c1, c2, r = 0, i = 0, len = 0;
+	int fdf, fdt, c1, c2, r = 0, i = 0, len = 0, w;
 
 	if (argc != 3)
 	{
@@ -29,8 +29,8 @@ int main(int argc, char **argv)
 	while(len == 1024);
 
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 00664);
-	write(fdt, buff, r);
-	if (fdt == -1)
+	w = write(fdt, buff, r);
+	if (fdt == -1 || w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
