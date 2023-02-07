@@ -8,10 +8,12 @@
 int main(int argc, char **argv)
 {
 	char buff[5024];
-	int fdf, fdt, c1, c2, r;
+	int fdf, fdt, c1, c2, r = 0, i = 0, len = 0;
+
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"); exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 	fdf = open(argv[1], O_RDONLY);
 	if (fdf == -1)
@@ -19,7 +21,13 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	r = read(fdf, buff, 5024);
+	do{
+		len = read(fdf, &buff[i * 1024], 1024);
+		i++;
+		r = r + len;
+	}
+	while(len == 1024);
+
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 00664);
 	write(fdt, buff, r);
 	if (fdt == -1)
