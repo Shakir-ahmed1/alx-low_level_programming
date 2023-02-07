@@ -7,7 +7,7 @@
  */
 int main(int argc, char **argv)
 {
-	char buff[1024];
+	char buff[5024];
 	int fdf, fdt, c1, c2, r;
 	if (argc != 3)
 	{
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	r = read(fdf, buff, 1024);
+	r = read(fdf, buff, 5024);
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 00664);
 	write(fdt, buff, r);
 	if (fdt == -1)
