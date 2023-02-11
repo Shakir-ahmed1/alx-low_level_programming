@@ -17,12 +17,17 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fdf = open(argv[1], O_RDONLY);
+	if (fdf == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	do {
 		len = read(fdf, &buff[i * 1024], 1024);
 		i++;
 		r = r + len;
 	} while (len == 1024);
-	if (fdf == -1 || r == -1)
+	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -36,12 +41,7 @@ int main(int argc, char **argv)
 	}
 	c1 = close(fdf);
 	c2 = close(fdt);
-	if (c1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd ");
-		exit(100);
-	}
-	if (c2 == -1)
+	if (c1 == -1 || c2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd ");
 		exit(100);
