@@ -29,7 +29,12 @@ int main(int argc, char **argv)
 	} while (len == 1024);
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	w = write(fdt, buff, r);
-	if (fdt == -1 || w == -1)
+	if (fdt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		exit(98);
+	}
+	if (w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
@@ -38,12 +43,12 @@ int main(int argc, char **argv)
 	c2 = close(fdt);
 	if (c1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", fdf);
+		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		exit(100);
 	}
 	if (c2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", fdt);
+		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		exit(100);
 	}
 	return (0);
