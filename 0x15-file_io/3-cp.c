@@ -28,6 +28,11 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	if (fdt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		exit(98);
+	}
 	w = write(fdt, buff, r);
 	if (w == -1)
 	{
@@ -38,12 +43,12 @@ int main(int argc, char **argv)
 	c2 = close(fdt);
 	if (c1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd");
+		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
 	if (c2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd");
+		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 		exit(100);
 	}
 	return (0);
