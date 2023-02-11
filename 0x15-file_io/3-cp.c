@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	} while (len == 1024);
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fdt = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
