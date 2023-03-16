@@ -1,44 +1,53 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
-int f1(int x) {
-    return (x * 3) % 64;
+int f1(unsigned char a1) {
+    return (a1 ^ 59) & 63;
 }
 
-int f2(char *s, int x) {
-    int sum = 0;
-    for (int i = 0; i < x; i++) {
-        sum += s[i];
+int f5(long long a1, int a2) {
+    unsigned char v3 = 0;
+    for (int i = 0; i < a2; ++i) {
+        v3 += *((char *)(i + a1)) * *((char *)(i + a1));
     }
-    return sum % 64;
+    return (v3 ^ 239) & 63;
 }
 
-int f3(char *s, int x) {
-    int sum = 0;
-    for (int i = 0; i < x; i++) {
-        sum += s[i] * i;
+int f6(char a1) {
+    unsigned char v2 = 0;
+    for (int i = 0; a1 > i; ++i) {
+        v2 = rand();
     }
-    return sum % 64;
+    return (v2 ^ 229) & 63;
 }
 
-int f4(char *s, int x) {
-    int sum = 0;
-    for (int i = 0; i < x; i++) {
-        sum += s[i] * (i + 1);
+int f4(char *a1, int a2) {
+    int v3 = *a1;
+    for (int i = 0; i < a2; ++i) {
+        if (a1[i] > v3) {
+            v3 = a1[i];
+        }
     }
-    return sum % 64;
+    srand(v3 ^ 14);
+    return rand() & 63;
 }
 
-int f5(char *s, int x) {
-    int sum = 0;
-    for (int i = 0; i < x; i++) {
-        sum += s[i] * (i + 2);
+int f3(long long a1, int a2) {
+    char v3 = 1;
+    for (int i = 0; i < a2; ++i) {
+        v3 *= *((char *)(i + a1));
     }
-    return sum % 64;
+    return ((unsigned char)v3 ^ 85) & 63;
 }
 
-int f6(int x) {
-    return (x * 7) % 64;
+int f2(long long a1, int a2) {
+    unsigned char v3 = 0;
+    for (int i = 0; i < a2; ++i) {
+        v3 += *((char *)(i + a1));
+    }
+    return (v3 ^ 79) & 63;
 }
 
 int main(int argc, char **argv) {
@@ -50,10 +59,10 @@ int main(int argc, char **argv) {
     char *username = argv[1];
     int len = strlen(username);
     int f1_res = f1(len);
-    int f2_res = f2(username, len);
-    int f3_res = f3(username, len);
+    int f2_res = f2((long long)username, len);
+    int f3_res = f3((long long)username, len);
     int f4_res = f4(username, len);
-    int f5_res = f5(username, len);
+    int f5_res = f5((long long)username, len);
     int f6_res = f6(username[0]);
     printf("%c%c%c%c%c%c\n", v21[f1_res], v21[f2_res], v21[f3_res], v21[f4_res], v21[f5_res], v21[f6_res]);
     return 0;
