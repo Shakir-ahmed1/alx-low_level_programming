@@ -1,8 +1,9 @@
 #include "lists.h"
 /**
- * insert_nodeint_at_index - inserts node at the given index
+ * insert_dnodeint_at_index - inserts node at the given index
  * @h: the head
  * @n: the data of the new node
+ * @idx: the index of the new node
  * Return: address of the new node, NULL if failed
  */
 
