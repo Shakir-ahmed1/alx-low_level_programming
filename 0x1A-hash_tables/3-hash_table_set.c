@@ -26,16 +26,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((const unsigned char *) key, ht->size);
 	temp = ht->array[index];
-/*	if (temp == NULL)
+	if (temp != NULL)
 	{
-		while(temp->next)
-			temp = temp->next;
-		temp->next = new;
+		new->next = ht->array[index];
+		ht->array[index] = new;
 		return (1);
 	}
-	temp = new;
-*/	(void) temp;
-	if (temp == NULL)
-		ht->array[index] = new;
+	ht->array[index] = new;
 	return (1);
 }
