@@ -9,17 +9,22 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned int index;
-	hash_node_t *new;
+	hash_node_t *new, *temp;
 
 	if (ht == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *) key, ht->size);
-	if (ht->array[index] && strcmp(ht->array[index]->key, key) == 0)
+	temp = ht->array[index];
+	while (temp)
 	{
-		free(ht->array[index]->value);
-		ht->array[index]->value = strdup(value);
-		return (1);
+		if (temp && strcmp(temp->key, key) == 0)
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			return (1);
+		}
+		temp = temp->next;
 	}
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
