@@ -6,7 +6,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp;
-	long unsigned int i, signal = 1;
+	unsigned long int i, signal = 1;
 
 	if (ht == NULL || ht->size == 0)
 		return;
@@ -22,12 +22,12 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				if (signal)
 				{
-					printf("'%s': '%s'",temp->key,temp->value);
+					printf("'%s': '%s'", temp->key, temp->value);
 					signal = 0;
 				}
 				else
 				{
-					printf(",'%s': '%s'",temp->key,temp->value);
+					printf(", '%s': '%s'", temp->key, temp->value);
 				}
 				temp = temp->next;
 			}
