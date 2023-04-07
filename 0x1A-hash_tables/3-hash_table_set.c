@@ -30,12 +30,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		strcpy(ht->array[index]->value, value);
 		return (1);
 	}
-/*	if (ht->array[index] != NULL)
+	if (ht->array[index] != NULL)
 	{
 		new->next = ht->array[index];
 		ht->array[index] = new;
 		return (1);
 	}
-*/	ht->array[index] = new;
+	ht->array[index] = new;
 	return (1);
 }
