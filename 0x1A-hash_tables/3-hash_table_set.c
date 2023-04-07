@@ -4,6 +4,7 @@
  * @ht: the hash table
  * @key: the key
  * @value: the value to be stored
+ * Return: 1 if success 0 if failed
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -22,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(new->key, key);
 	strcpy(new->value, value);
 	new->next = NULL;
-	
+
 	index = key_index((const unsigned char *) key, ht->size);
 	ht->array[index] = new;
 	return (1);
