@@ -31,6 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while(temp->next)
 			temp = temp->next;
 		temp->next = new;
+		return (1);
 	}
 	temp = new;
 	return (1);
