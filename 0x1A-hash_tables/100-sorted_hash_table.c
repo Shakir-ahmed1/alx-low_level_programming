@@ -18,14 +18,16 @@ void sorted_add(shash_table_t *sht, shash_node_t *new)
 		sht->stail = new;
 		return;
 	}
-	if (temp->key[0] > new->key[0])
+	/*if (temp->key[0] > new->key[0])
+	*/if (strcmp(temp->key, new->key) > 0)
 	{
 		sht->shead = new;
 		new->snext = temp;
 		temp->sprev = new;
 		return;
 	}
-	while (temp && temp->snext != NULL && temp->snext->key[0] < new->key[0])
+	/*while (temp && temp->snext != NULL && temp->snext->key[0] < new->key[0])
+	*/while (temp && temp->snext != NULL && strcmp(temp->snext->key, new->key) < 0)
 	{
 		temp = temp->snext;
 	}
