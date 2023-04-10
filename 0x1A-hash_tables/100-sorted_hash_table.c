@@ -32,12 +32,10 @@ void sorted_add(shash_table_t *sht, shash_node_t *new)
 	new->snext = temp->snext;
 	new->sprev = temp;
 	temp->snext = new;
-	if (temp == sht->shead)
+	if (temp->next == sht->shead)
 		sht->shead = new;
-	if (new->snext != NULL)
+	else if (new->snext != NULL)
 		new->snext->sprev = new;
-	if (new->snext == NULL)
-		sht->stail = new;
 }
 /**
  * shash_table_create - creates a new hash table
@@ -143,7 +141,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  */
 void shash_table_print(const shash_table_t *ht)
 {
-	shash_node_t *temp;
+	shash_node_t *temp, *templ;
 	unsigned long int i, signal = 1;
 
 	if (ht == NULL || ht->size == 0 || ht->shead == NULL)
@@ -153,17 +151,26 @@ void shash_table_print(const shash_table_t *ht)
 	printf("{");
 	for (i = 0; temp; i++)
 	{
-		if (signal)
-		{
-			printf("'%s': '%s'", temp->key, temp->value);
-			signal = 0;
-		}
+		if (temp == NULL)
+			continue;
 		else
 		{
-			printf(", '%s': '%s'", temp->key, temp->value);
+			templ = temp;
+			while (templ)
+			{
+				if (signal)
+				{
+					printf("'%s': '%s'", temp->key, temp->value);
+					signal = 0;
+				}
+				else
+				{
+					printf(", '%s': '%s'", temp->key, temp->value);
+				}
+				templ = templ->next;
+			}
 		}
 		temp = temp->snext;
-
 
 	}
 	printf("}\n");
