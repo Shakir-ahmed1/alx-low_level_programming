@@ -3,8 +3,5 @@ SRC = main.c school.c
 OBJ = main.o school.o
 NAME = school
 
-all: school
-	
-school: $(OBJ) .FORCE
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-.FORCE:
