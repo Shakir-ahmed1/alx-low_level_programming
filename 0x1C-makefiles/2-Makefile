@@ -5,5 +5,5 @@ NAME = school
 
 all: $(OBJ) .FORCE
 	$(CC) $(OBJ) -o $(NAME)
-
+$(OBJ): $(SRC)
 .FORCE:
