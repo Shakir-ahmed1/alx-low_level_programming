@@ -9,17 +9,12 @@ def island_perimeter(grid):
     for a in range(len(grid)):
         for b in range(ac):
             if grid[a][b] == 1:
-                print("didid")
                 if grid[a-1][b] == 0:
                     prm += 1
-                    print(grid[a-1][b])
                 if grid[a][b + 1] == 0:
                     prm +=1
-                    print(grid[a][b+1])
                 if grid[a + 1][b] == 0:
                     prm +=1
-                    print( grid[a+1][b])
                 if grid[a][b - 1] == 0:
                     prm +=1
-                    print(grid[a][b-1])
     return prm 
