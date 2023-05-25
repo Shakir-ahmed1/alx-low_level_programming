@@ -12,9 +12,9 @@ def island_perimeter(grid):
                 if a <= 0 or grid[a-1][b] == 0:
                     prm += 1
                 if b >= ac - 1 or grid[a][b + 1] == 0:
-                    prm +=1
+                    prm += 1
                 if a >= len(grid) - 1 or grid[a + 1][b] == 0:
-                    prm +=1
+                    prm += 1
                 if b <= 0 or grid[a][b - 1] == 0:
-                    prm +=1
-    return prm 
+                    prm += 1
+    return prm
