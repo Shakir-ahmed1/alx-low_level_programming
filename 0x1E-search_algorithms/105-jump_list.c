@@ -22,7 +22,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	i = 0;
 	lb = 0;
 	j = 0;
-	while (temp->n <= value && temp->next != NULL)
+	while (temp->n < value && temp->next != NULL)
 	{
 		if (i + m >= size - 1)
 			i = size - 1;
