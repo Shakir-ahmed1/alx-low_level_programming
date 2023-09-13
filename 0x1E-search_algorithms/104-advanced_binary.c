@@ -27,7 +27,7 @@ int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 			result = recurs_binary(array, size, value, m + 1, r);
 		else
 		{
-			if (m = 0 || value != array[m - 1])
+			if (m == 0 || value != array[m - 1])
 			{
 				return (m);
 			}
