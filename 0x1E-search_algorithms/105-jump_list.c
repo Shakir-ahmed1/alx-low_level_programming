@@ -20,14 +20,12 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		return (NULL);
 	m = sqrt(size);
 	i = 0;
-	while (temp->n < value)
+	while (temp->n < value && temp->next == NULL)
 	{
 		if (i + m >= size - 1)
 			i = size - 1;
 		else
 			i += m;
-		if (temp->next == NULL)
-			break;
 		for (k = 0; k < m && temp->next != NULL; k++)
 			temp = temp->next;
 		printf("Value checked array[%ld] = [%d]\n", i, temp->n);
