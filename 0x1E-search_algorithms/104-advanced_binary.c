@@ -1,7 +1,17 @@
 #include "search_algos.h"
-int spliter(int *array, size_t size, int value, size_t l, size_t r)
+/**
+ * recurs_binary - advanced_binary but with recursion
+ * @array: the index to the first array
+ * @size: the size of the array
+ * @value: the value to be searched
+ * @l: the left bound
+ * @r: the upper bound
+ * Return: the index of the value if found, else return -1
+ */
+int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 {
 	size_t m, i, result;
+
 	if (r >= l)
 	{
 		printf("Searching in array: %d", array[l]);
@@ -12,11 +22,20 @@ int spliter(int *array, size_t size, int value, size_t l, size_t r)
 		printf("\n");
 		m = (l + r) / 2;
 		if (array[m] > value)
-			result = spliter(array, size, value, l, m - 1);
+			result = recurs_binary(array, size, value, l, m - 1);
 		else if (array[m] < value)
-			result = spliter(array, size, value, m + 1, r);
+			result = recurs_binary(array, size, value, m + 1, r);
 		else
-			return (m);
+		{
+			if (m == 0 || array[m - 1] < value)
+			{
+				return (m);
+			}
+			else
+			{
+				result = recurs_binary(array, size, value, l, m);
+			}
+		}
 		return (result);
 	}
 	return (-1);
@@ -37,5 +56,5 @@ int advanced_binary(int *array, size_t size, int value)
 		return (-1);
 	l = 0;
 	r = size - 1;
-	return (spliter(array, size, value, l, r));
+	return (recurs_binary(array, size, value, l, r));
 }
