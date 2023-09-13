@@ -5,7 +5,6 @@
  * linear_skip - a jump search with express lane in the linked list
  *
  * @list: Pointer to the first element in the linked list
- * @size: Size of the array
  * @value: the value to be searched
  *
  * Return: A pointer to the linked list that mathces with the value
@@ -18,8 +17,8 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	ub = list;
 	if (list == NULL)
 		return (NULL);
-	
-	while (value >= ub->n && ub != NULL)
+
+	while (value > ub->n && ub != NULL)
 	{
 		lb = ub;
 		if (ub->express == NULL)
