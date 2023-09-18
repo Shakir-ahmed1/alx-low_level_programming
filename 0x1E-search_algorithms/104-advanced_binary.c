@@ -22,10 +22,6 @@ int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 		}
 		printf("\n");
 		t = l + r;
-
-		if ((t + r) % 2 == 0)
-			t++;
-
 		m = t / 2;
 		if (r - l <= 1)
 			return (m);
