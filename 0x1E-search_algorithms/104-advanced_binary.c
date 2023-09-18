@@ -10,8 +10,9 @@
  */
 int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 {
-	size_t m, i, result;
+	size_t m, i, result, t;
 
+	m = 0;
 	if (r >= l)
 	{
 		printf("Searching in array: %d", array[l]);
@@ -20,24 +21,24 @@ int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 			printf(", %d", array[i]);
 		}
 		printf("\n");
-		m = (l + r) / 2;
-		if (array[m] > value)
-			result = recurs_binary(array, size, value, l, m - 1);
+		t = l + r;
+
+		if ((t + r) % 2 == 0)
+			t++;
+
+		m = t / 2;
+		if (r - l <= 1)
+			return (m);
+		if (array[m] >= value)
+			result = recurs_binary(array, size, value, l, m);
 		else if (array[m] < value)
 			result = recurs_binary(array, size, value, m + 1, r);
 		else
-		{
-			if (m == 0 || value != array[m - 1])
-			{
 				return (m);
-			}
-			else
-			{
-				result = recurs_binary(array, size, value, l, m);
-			}
-		}
 		return (result);
 	}
+	if (array[m] == value)
+		return (m);
 	return (-1);
 }
 /**
