@@ -23,18 +23,18 @@ int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 		printf("\n");
 		t = l + r;
 		m = t / 2;
-		if (r - l <= 1)
+		if (r - l == 1 && array[m] == value)
 			return (m);
 		if (array[m] >= value)
 			result = recurs_binary(array, size, value, l, m);
 		else if (array[m] < value)
 			result = recurs_binary(array, size, value, m + 1, r);
-		else
+		else if (array[m] == value)
 				return (m);
+		else
+			return (-1);
 		return (result);
 	}
-	if (array[m] == value)
-		return (m);
 	return (-1);
 }
 /**
