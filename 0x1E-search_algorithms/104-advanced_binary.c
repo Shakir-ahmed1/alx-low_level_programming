@@ -30,7 +30,7 @@ int recurs_binary(int *array, size_t size, int value, size_t l, size_t r)
 		else if (array[m] < value)
 			result = recurs_binary(array, size, value, m + 1, r);
 		else if (array[m] == value)
-				return (m);
+			return (m);
 		else
 			return (-1);
 		return (result);
